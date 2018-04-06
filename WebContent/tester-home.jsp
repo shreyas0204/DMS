@@ -48,7 +48,7 @@
 	<!-- topbar starts -->
 	<div class="navbar navbar-default" role="navigation">
 
-		<jsp:include page="header-partner.jsp"></jsp:include>
+		<jsp:include page="tester-header.jsp"></jsp:include>
 	</div>
 	<!-- topbar ends -->
 	<div class="ch-container">
@@ -57,7 +57,7 @@
 			<div class="col-sm-2 col-lg-2">
 				<div class="sidebar-nav">
 					<div class="nav-canvas">
-						<jsp:include page="menu-partner.jsp"></jsp:include>
+						<jsp:include page="tester-menu.jsp"></jsp:include>
 					</div>
 				</div>
 			</div>
@@ -85,11 +85,11 @@
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-list"></i> Welcome Partner
+									<i class="glyphicon glyphicon-list"></i> Welcome Tester
 								</h2>
 							</div>
 							<div class="box-content">
-								<h1>Welcome Partner</h1>
+								<h1>Welcome Tester</h1>
 
 							</div>
 						</div>
