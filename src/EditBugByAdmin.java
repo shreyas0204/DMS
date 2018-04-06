@@ -18,14 +18,14 @@ import com.dexpert.main.databaseconnection.DBConnection;
 /**
  * Servlet implementation class updatepartner
  */
-@WebServlet("/updatepartner")
-public class updatepartner extends HttpServlet {
+@WebServlet("/editbugbyadmin")
+public class EditBugByAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public updatepartner() {
+	public EditBugByAdmin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

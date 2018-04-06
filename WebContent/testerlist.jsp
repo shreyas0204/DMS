@@ -152,9 +152,12 @@
 											<td class="center"><a class="btn btn-success" href="#"
 												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+											</a> <a class="btn btn-info" href="#"
+												'editc?oid=<%=rs.getInt("id")%>
+												', '_blank', 'height=500,width=500')"> <i
 													class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
+											</a> <a class="btn btn-danger" href="#"
+												onclick="deletes('<%=rs.getInt("id")%>')"> <i
 													class="glyphicon glyphicon-trash icon-white"></i> Delete
 											</a></td>
 										</tr>
@@ -235,7 +238,7 @@
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
 
-<script type="text/javascript">
+	<script type="text/javascript">
 
 function deletes(id){
 	

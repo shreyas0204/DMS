@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>Edit Partner Details</title>
+<title>View Partner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The styles -->
 <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
 
 <body>
 	<%
-		ResultSet rs1 = (ResultSet) request.getAttribute("resultSet");
+		ResultSet rs = (ResultSet) request.getAttribute("viewbug");
 	%>
 	<div class="ch-container">
 		<div class="row">
@@ -73,8 +73,7 @@
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-star-empty"></i> Edit Partner
-									Details
+									<i class="glyphicon glyphicon-star-empty"></i> Partner Details
 								</h2>
 
 								<div class="box-icon">
@@ -84,105 +83,76 @@
 							</div>
 							<div class="box-content">
 								<!-- put your content here -->
+								<%
+									if (rs.next())
+										rs.beforeFirst();
+								%>
+								<table id="mainForm1">
+									<tbody>
 
+										<tr>
 
-								<form action="updatePartner" method="post">
-									<%
-										if (rs1.next()) {
-									%>
-									<table id="mainForm1">
-										<tbody>
-											<input type="hidden" class="form-control" id=""
-												name="partnerId" value="<%=rs1.getString("partnerId")%>">
-											<tr>
+											<td>Bug</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("name")%>
+												</div></td>
+										</tr>
+										<tr>
 
-												<td>Partner Name</td>
-												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
-															name="partnerName"
-															value="<%=rs1.getString("partnerName")%>">
-													</div></td>
-											</tr>
-											<tr>
-
-												<td>Occupation</td>
-												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
-															value="<%=rs1.getString("occupation")%>"
-															name="occupation" />
-													</div></td>
+											<td>Severity</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("severity")%>
+												</div></td>
 
 
 
-											</tr>
-											<tr>
+										</tr>
+										<tr>
 
-												<td>Email address</td>
-												<td><div id="the-basics" class="has-success">
-														<input type="email" class="form-control"
-															id="exampleInputEmail1"
-															value="<%=rs1.getString("email")%>" name="email" />
-													</div></td>
+											<td>Bug Type</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("type")%>
+												</div></td>
 
-											</tr>
-											<tr>
+										</tr>
+										<tr>
 
-												<td>Contact No</td>
-												<td><div id="the-basics" class="has-success">
-														<input type="number" class="form-control" maxlength="10"
-															id="" value="<%=rs1.getString("contactNumber")%>"
-															name="contactNumber" />
-													</div></td>
-											</tr>
+											<td>Status</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("status")%>
+												</div></td>
+										</tr>
 
-											<tr>
+										<tr>
 
-												<td>Address</td>
-												<td><div id="the-basics" class="has-success">
+											<td>Description</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("description")%>
+												</div></td>
 
+										</tr>
+										<tr>
 
-														<input type="text" required="required" id="payer_type"
-															name="address" pattern="[a-zA-Z][a-zA-Z0-9\s]*"
-															title="Address Should be Alphanumeric"
-															value="<%=rs1.getString("address")%>"
-															class="form-control">
-													</div></td>
+											<td>Date</td>
+											<td><div id="the-basics" class="has-success">
+													<%=rs.getString("date")%>
+												</div></td>
 
-											</tr>
-											<tr>
-
-												<td>Partner type</td>
-												<td><div id="the-basics" class="has-success">
+										</tr>
+										<tr>
+											
+											<td><button class="btn btn-sm btn-warning"
+													onclick="window.close()">Cancel</button></td>
 
 
-														<input type="text" class="form-control" id=""
-															value="<%=rs1.getString("partNerType")%>"
-															name="partNerType" />
-													</div></td>
-
-											</tr>
+										</tr>
 
 
 
-
-											<tr>
-												<td><a href="aaa"></a><input
-													class="btn btn-sm btn-success" type="submit" value="Update"></a></td>
-												<td><button class="btn btn-sm btn-warning"
-														onclick="window.close()">Cancel</button></td>
+									</tbody>
+								</table>
 
 
-											</tr>
-
-
-
-										</tbody>
-									</table>
-
-									<%
-										}
-									%>
-								</form>
 							</div>
 						</div>
 					</div>
@@ -258,6 +228,7 @@
 	<script src="js/jquery.history.js"></script>
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
+<script>alert(id);</script>
 
 </body>
 </html>

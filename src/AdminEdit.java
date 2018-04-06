@@ -21,13 +21,13 @@ import com.tendrilla.mail.MailSender;
  * Servlet implementation class edit
  */
 @WebServlet("/edit")
-public class edit extends HttpServlet {
+public class AdminEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public edit() {
+	public AdminEdit() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -60,18 +60,18 @@ public class edit extends HttpServlet {
 
 			stmt = con.createStatement();
 
-			int a = Integer.parseInt(request.getParameter("pid"));
-			System.out.println("print partner id=" + a);
+			int id = Integer.parseInt(request.getParameter("id"));
+			System.out.println("print partner id=" + id);
 
 			Statement statement = (Statement) con.createStatement();
-			String sql = "select * from partners_master where partnerId=" + a;
+			String sql = "select * from dms.defect_info where id="+id+"";
 			ResultSet rs1 = statement.executeQuery(sql);
 			RequestDispatcher rd = null;
 			
 			    System.out.println("I am Inside Loop");
-				request.setAttribute("resultSet", rs1);
+				request.setAttribute("adminedit", rs1);
 				System.out.println("afetr request");
-				rd = request.getRequestDispatcher("/edit.jsp");
+				rd = request.getRequestDispatcher("/adminedit.jsp");
 				rd.forward(request, response); 			
 
 		}

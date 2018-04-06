@@ -50,10 +50,10 @@ public class FetchAllDefect extends HttpServlet {
 	        RequestDispatcher rd= null;
 	        if(rs.next()){
 	     	   
-	     	   request.setAttribute("defectList", rs);   	  
+	     	   request.setAttribute("adminlist", rs);   	  
 	     	
 	     	   
-	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
+	     	   rd=request.getRequestDispatcher("/adminlist.jsp");
 	     	   rd.forward(request, response);
 	     	   
 	        }   
@@ -62,7 +62,7 @@ public class FetchAllDefect extends HttpServlet {
 	     	   request.setAttribute("buglist", rs);
 
 	     	   
-	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
+	     	   rd=request.getRequestDispatcher("/adminlist.jsp");
 	     	   rd.forward(request, response);  	   
 	        }
 	     	
