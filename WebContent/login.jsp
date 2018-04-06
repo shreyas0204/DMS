@@ -71,10 +71,9 @@ Welcome | DMS
                         <input type="password" class="form-control" placeholder="Password" name="pass">
                     </div>
                     <div class="clearfix"></div>
-
-                    <div class="input-prepend">
-                        <label class="remember" for="remember"><input type="checkbox" id="remember"> Remember me</label>
-                    </div>
+<div>
+                       <a href="register.jsp"><label >Do not have an account?</label></a>
+                   </div>
                     <div class="clearfix"></div>
 
                     <p class="center col-md-5">

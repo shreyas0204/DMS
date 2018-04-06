@@ -93,14 +93,14 @@
 
 											<td>Partner Name</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("partnerName")%>
+													<%=rs.getString("name")%>
 												</div></td>
 										</tr>
 										<tr>
 
 											<td>Occupation</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("occupation")%>
+													<%=rs.getString("severity")%>
 												</div></td>
 
 
@@ -110,7 +110,7 @@
 
 											<td>Email address</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("email")%>
+													<%=rs.getString("type")%>
 												</div></td>
 
 										</tr>
@@ -118,7 +118,7 @@
 
 											<td>Contact No</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("contactNumber")%>
+													<%=rs.getString("name")%>
 												</div></td>
 										</tr>
 
@@ -126,7 +126,7 @@
 
 											<td>Address</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("address")%>
+													<%=rs.getString("description")%>
 												</div></td>
 
 										</tr>
@@ -134,18 +134,18 @@
 
 											<td>Partner type</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("partNerType")%>
+													<%=rs.getString("name")%>
 												</div></td>
 
 										</tr>
-										<tr>
+										<%-- <tr>
 
 											<td>Registered Date</td>
 											<td><div id="the-basics" class="has-success">
 													<%=rs.getString("registeredDate")%>
 												</div></td>
 
-										</tr>
+										</tr> --%>
 
 
 
