@@ -18,14 +18,14 @@ import com.dexpert.main.databaseconnection.DBConnection;
 /**
  * Servlet implementation class view
  */
-@WebServlet("/view")
-public class view extends HttpServlet {
+@WebServlet("/viewbug")
+public class AdminView extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public view() {
+    public AdminView() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,10 +38,11 @@ public class view extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//System.out.println("I am inside doGet");
 		
-		int a=Integer.parseInt(request.getParameter("id"));
-        System.out.println("print partner id="+a);
+		System.out.println("I am inside doGet");
+		
+		int id=Integer.parseInt(request.getParameter("id"));
+        System.out.println("print partner id="+id);
         
 try
 {
@@ -49,12 +50,12 @@ try
 	Connection con=connection.getConnection();	
 	Statement statement = (Statement) con.createStatement();
 	System.out.println("before query");
-		ResultSet rs1=statement.executeQuery("select * from defect_info where id="+a+"");
-		System.out.println("after query"+a);
+		ResultSet rs1=statement.executeQuery("select * from dms.defect_info where id="+id+"");
+		System.out.println("after query"+id);
 		  RequestDispatcher rd= null;
-		  request.setAttribute("viewpartner", rs1);  
+		  request.setAttribute("viewbug", rs1);  
 		  System.out.println("afetr request");
-		  rd=request.getRequestDispatcher("/view.jsp");
+		  rd=request.getRequestDispatcher("/adminview.jsp");
     	   rd.forward(request, response);
     	   
 		

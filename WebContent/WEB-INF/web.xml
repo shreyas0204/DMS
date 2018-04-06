@@ -62,7 +62,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>editbutton</servlet-name>
-    <servlet-class>edit</servlet-class>
+    <servlet-class>AdminEdit</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>editbutton</servlet-name>
@@ -70,19 +70,19 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>update</servlet-name>
-    <servlet-class>updatepartner</servlet-class>
+    <servlet-class>EditBugByAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>update</servlet-name>
-    <url-pattern>/updatePartner</url-pattern>
+    <url-pattern>/editbugbyadmin</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>viewbutton</servlet-name>
-    <servlet-class>view</servlet-class>
+    <servlet-class>AdminView</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>viewbutton</servlet-name>
-    <url-pattern>/view?</url-pattern>
+    <url-pattern>/viewbug?</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>deletePart</servlet-name>

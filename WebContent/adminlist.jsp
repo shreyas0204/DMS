@@ -50,7 +50,7 @@
 <body>
 
 	<%
-		ResultSet rs = (ResultSet) request.getAttribute("defectList");
+		ResultSet rs = (ResultSet) request.getAttribute("adminlist");
 		rs.beforeFirst();
 	%>
 	<!-- topbar starts -->
@@ -134,19 +134,18 @@
 										%>
 
 										<tr>
-											<td><%=rs.getInt("id")%></td>
+											<td><%=rs.getString("id")%></td>
 											<td class="center"><%=rs.getString("name")%></td>
 											<td class="center"><%=rs.getString("bug_type")%></td>
 											<td class="center"><%=rs.getString("severity")%></td>
 											<td class="center"><%=rs.getString("status")%></td>
-											<td class="center"><a class="btn btn-success" href="#"
-												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
+											<td class="center"><a class="btn btn-success" id="view" href="#" onClick="window.open('viewbug?id=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+											</a>  <a class="btn btn-info" href="#" onClick="window.open('edit?id=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
 													class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
+											</a> <%-- <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
 													class="glyphicon glyphicon-trash icon-white"></i> Delete
-											</a></td>
+											</a> --%></td>
 										</tr>
 
 										<%
@@ -224,6 +223,7 @@
 	<script src="js/charisma.js"></script>
 
 	<script type="text/javascript">
+	
 	
 	function deletes(name,id){
 	
