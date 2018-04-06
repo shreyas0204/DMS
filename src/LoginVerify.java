@@ -58,7 +58,7 @@ public class LoginVerify extends HttpServlet {
 				if (usertype.equalsIgnoreCase(ProjectConstants.ADMIN)) {
 
 					// System.out.println("partner login case");
-					rd = request.getRequestDispatcher("/sa-home.jsp");
+					rd = request.getRequestDispatcher("/admin.jsp");
 
 					session.setAttribute("UserProfile", usertype);
 

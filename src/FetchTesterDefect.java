@@ -21,13 +21,13 @@ import com.dexpert.main.databaseconnection.DBConnection;
  * Servlet implementation class FetchClient
  */
 @WebServlet("/FetchClient")
-public class FetchClient extends HttpServlet {
+public class FetchTesterDefect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FetchClient() {
+    public FetchTesterDefect() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,9 +42,9 @@ public class FetchClient extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	       HttpSession session=request.getSession(); 
-	       String partnerid =(String) session.getAttribute("PARTNERID");
+	       Integer testerid =(Integer) session.getAttribute("sessionID");
 	   
-	       //System.out.println("got partner id from session as::"+partnerid);
+	      // System.out.println("got partner id from session as::"+testerid);
 		
 		try{
 		
@@ -55,26 +55,22 @@ public class FetchClient extends HttpServlet {
 
 			 //System.out.println("partner is recived is::"+partnerid);
 			
-	        ResultSet rs =statement.executeQuery("SELECT * from organization_master om,partners_master pm where om.reffer_Partner_Idfk=pm.partnerId  and pm.partnerId='"+partnerid+"'"); 
+	        ResultSet rs =statement.executeQuery("SELECT * FROM dms.defect_info where tester_id="+testerid); 
 	        RequestDispatcher rd= null;
 	        
-	       // System.out.println(" after partner recived is after query::"+partnerid);
+	       //System.out.println(" after partner recived is after query::"+testerid);
 	        if(rs.next()){
-	     	   
-	        	
-	        	  String orgname = rs.getString("organization_name");
-	     	   request.setAttribute("AllclientList", rs);   	  
-	     	System.out.println("got records from db"+orgname);
-	     	   
-	     	   rd=request.getRequestDispatcher("/clientlist.jsp");
+	        	Integer id = rs.getInt("id");
+	     	   request.setAttribute("testerlist", rs);   	  
+	     	   rd=request.getRequestDispatcher("/testerlist.jsp");
 	     	   rd.forward(request, response);
 	     	   
 	        }   
 	        else{
 	     	   
-	     	   request.setAttribute("clientList", rs);
+	     	   request.setAttribute("testerlist", rs);
 	     	   
-	     	   rd=request.getRequestDispatcher("/clientlist.jsp");
+	     	   rd=request.getRequestDispatcher("/testerlist.jsp");
 	     	   rd.forward(request, response);  	   
 	        }
 	     	

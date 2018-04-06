@@ -19,7 +19,7 @@
 				<button class="btn btn-default dropdown-toggle"
 					data-toggle="dropdown">
 					<i class="glyphicon glyphicon-user"></i><span
-						class="hidden-sm hidden-xs">Partner</span> <span class="caret"></span>
+						class="hidden-sm hidden-xs">Tester</span> <span class="caret"></span>
 				</button>
 				
 				<ul class="dropdown-menu">

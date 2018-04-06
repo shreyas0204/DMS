@@ -30,11 +30,11 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ppclient</servlet-name>
-    <servlet-class>FetchClient</servlet-class>
+    <servlet-class>FetchTesterDefect</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ppclient</servlet-name>
-    <url-pattern>/clients</url-pattern>
+    <url-pattern>/tester_bug</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>pat</servlet-name>
@@ -46,7 +46,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ke</servlet-name>
-    <servlet-class>FetchPartner</servlet-class>
+    <servlet-class>FetchAllDefect</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ke</servlet-name>
@@ -118,8 +118,6 @@
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
+    
   </welcome-file-list>
 </web-app>

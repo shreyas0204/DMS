@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
 <%@ page import="java.sql.*"%>
+<html lang="en">
 <head>
+<!--
+        ===
+        This comment should NOT be removed.
 
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
 <meta charset="utf-8">
-<title>All Partner</title>
+<title>Free HTML5 Bootstrap Admin Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
 	content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
@@ -50,13 +63,12 @@
 <body>
 
 	<%
-		ResultSet rs = (ResultSet) request.getAttribute("defectList");
+		ResultSet rs = (ResultSet) request.getAttribute("testerlist");
 		rs.beforeFirst();
 	%>
-	<!-- topbar starts -->
 	<div class="navbar navbar-default" role="navigation">
 
-		<jsp:include page="header-sa.jsp"></jsp:include>
+		<jsp:include page="tester-header.jsp"></jsp:include>
 	</div>
 	<!-- topbar ends -->
 
@@ -67,7 +79,7 @@
 			<div class="col-sm-2 col-lg-2">
 				<div class="sidebar-nav">
 					<div class="nav-canvas">
-						<jsp:include page="menu-sa.jsp"></jsp:include>
+						<jsp:include page="tester-menu.jsp"></jsp:include>
 					</div>
 				</div>
 			</div>
@@ -92,7 +104,7 @@
 						<div class="box-inner">
 							<div class="box-header well" data-original-title="">
 								<h2>
-									<i class="glyphicon glyphicon-user"></i> Partner List
+									<i class="glyphicon glyphicon-user"></i> Client List
 								</h2>
 
 								<div class="box-icon">
@@ -105,33 +117,24 @@
 								</div>
 							</div>
 							<div class="box-content">
-							
-						              	<%
-											String msg = (String) request.getAttribute("msg");
-											if (msg != null) {
-										%>
-										<center><h2><font color="RED"><%=msg%></font></h2></center>
-										<%
-											} else {}
-										%>
-							
 								<!-- 	<div class="alert alert-info"> -->
 								<div align="right">
 									<!-- <a class="btn btn-info" href='window.open("clientform.html",target="_blank")'> -->
-									<button class="btn btn-success"
-										onClick="window.open('partnerform.jsp', '_blank', 'height=500,width=500')"
-										style="width: inherit;">Add Partner</button>
+									<button class="btn btn-info"
+										onClick="window.open('clientform.jsp', '_blank', 'height=500,width=500')">Add
+										Client</button>
 								</div>
-								<!-- </div> -->
+
 								<table
 									class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Address</th>
-											<th>Contact Number</th>
-											<th>Email</th>
-											<th>Actions</th>
+											<th>ID</th>
+											<th>Bug</th>
+											<th>Type</th>
+											<th>Severity</th>
+											<th>Status</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -140,20 +143,18 @@
 										%>
 
 										<tr>
-											<td><%=rs.getString("name")%></td>
-											<td class="center">2012/01/01</td>
-											<td class="center">Member</td>
-											<td class="center">Member</td>
-											<!-- <td class="center"><span
-												class="label-success label label-default">Active</span></td> -->
+											<td><%=rs.getInt("id")%></td>
+											<td class="center"><%=rs.getString("name")%></td>
+											<td class="center"><%=rs.getString("bug_type")%></td>
+											<td class="center"><%=rs.getString("severity")%></td>
+											<td class="center"><%=rs.getString("status")%></td>
 											<td class="center"><a class="btn btn-success" href="#"
-												onClick="window.open('view?pid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
+												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"
-												onClick="window.open('edit?pid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
-													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getString("name")%>','<%=rs.getString("name")%>')">
-													<i class="glyphicon glyphicon-trash icon-white"></i> Delete
+											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+													class="glyphicon glyphicon-edit icon-white"></i> Edit
+											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
+													class="glyphicon glyphicon-trash icon-white"></i> Delete
 											</a></td>
 										</tr>
 
@@ -191,11 +192,13 @@
 								href="http://usman.it/free-responsive-admin-template"></a>
 						</p>
 					</footer>
-
 				</div>
 			</div>
 		</div>
 	</div>
+	<!--/.fluid-container-->
+
+	<!-- external javascript -->
 
 	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -231,18 +234,27 @@
 	<!-- application script for Charisma demo -->
 	<script src="js/charisma.js"></script>
 
-	<script type="text/javascript">
+<script type="text/javascript">
+
+function deletes(id){
 	
-	function deletes(name,id){
-	
-		var cnf = confirm("Delete " + name + " ? ")
-		if (cnf) {
-			alert("Partner has been Deleted");
-			window.location="deletePartner?id=" + id;
-			
-		}
+	var cnf = confirm("Delete " + name + " ? ")
+	if (cnf) {
+		alert("Partner has been Deleted");
+		window.location="deleteClients?id=" + id;
+		
 	}
-	
+}
+
+
+
 </script>
+
+
+
 </body>
+
+
+
+
 </html>

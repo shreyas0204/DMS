@@ -48,7 +48,7 @@
 	<!-- topbar starts -->
 	<div class="navbar navbar-default" role="navigation">
 
-		<jsp:include page="header-sa.jsp"></jsp:include>
+		<jsp:include page="admin-header.jsp"></jsp:include>
 	</div>
 	<!-- topbar ends -->
 	<div class="ch-container">
@@ -57,7 +57,7 @@
 			<div class="col-sm-2 col-lg-2">
 				<div class="sidebar-nav">
 					<div class="nav-canvas">
-						<jsp:include page="menu-sa.jsp"></jsp:include>
+						<jsp:include page="admin-menu.jsp"></jsp:include>
 					</div>
 				</div>
 			</div>

@@ -10,10 +10,10 @@
 <div class="nav nav-stacked"></div>
 <ul class="nav nav-pills nav-stacked main-menu">
 	<li class="nav-header">Main</li>
-	<li><a class="ajax-link" href="partner-home.jsp"><i
+	<li><a class="ajax-link" href="tester-home.jsp"><i
 			class="fa fa-building"></i><span> Home</span></a></li>
-	<li><a class="ajax-link" href="clients"><i
-			class="fa fa-building"></i><span> All Clients</span></a></li>
+	<li><a class="ajax-link" href="tester_bug"><i
+			class="fa fa-building"></i><span> All Bugs</span></a></li>
 	
 
 </ul>
