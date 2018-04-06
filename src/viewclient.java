@@ -47,13 +47,13 @@ try
 	Connection con=connection.getConnection();	
 	Statement statement = (Statement) con.createStatement();
 	System.out.println("before query");
-		ResultSet rs1=statement.executeQuery("select * from organization_master where organizationId="+b+"");
+		ResultSet rs3=statement.executeQuery("select * from dms.defect_info where id="+b+"");
 		System.out.println("after query"+b);
-		  RequestDispatcher rd= null;
-		  request.setAttribute("viewclient", rs1);  
+		  RequestDispatcher rd3= null;
+		  request.setAttribute("viewpartner1", rs3);  
 		  System.out.println("afetr request");
-		  rd=request.getRequestDispatcher("/viewclient.jsp");
-    	   rd.forward(request, response);
+		  rd3=request.getRequestDispatcher("/view.jsp");
+    	   rd3.forward(request, response);
     	   
 		
 

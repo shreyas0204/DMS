@@ -60,11 +60,11 @@ public class editclient extends HttpServlet {
 
 			stmt = con.createStatement();
 
-			int a = Integer.parseInt(request.getParameter("oid"));
+			int a = Integer.parseInt(request.getParameter("id"));
 			System.out.println("print organizationid=" + a);
 
 			Statement statement = (Statement) con.createStatement();
-			String sql = "select * from organization_master where organizationId=" + a;
+			String sql = "select * from defect_info where id=" + a;
 			ResultSet rs1 = statement.executeQuery(sql);
 			RequestDispatcher rd = null;
 			

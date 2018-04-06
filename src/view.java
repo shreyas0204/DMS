@@ -49,7 +49,7 @@ try
 	Connection con=connection.getConnection();	
 	Statement statement = (Statement) con.createStatement();
 	System.out.println("before query");
-		ResultSet rs1=statement.executeQuery("select * from defect_info where id="+a+"");
+		ResultSet rs1=statement.executeQuery("select * from dms.defect_info where id="+a+"");
 		System.out.println("after query"+a);
 		  RequestDispatcher rd= null;
 		  request.setAttribute("viewpartner", rs1);  

@@ -140,9 +140,9 @@
 											<td class="center"><%=rs.getString("severity")%></td>
 											<td class="center"><%=rs.getString("status")%></td>
 											<td class="center"><a class="btn btn-success" href="#"
-												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
+												onClick="window.open('viewclient?orgid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+											</a> <a class="btn btn-info" href="#"' onClick="window.open(editc?id=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
 													class="glyphicon glyphicon-edit icon-white"></i> Edit
 											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
 													class="glyphicon glyphicon-trash icon-white"></i> Delete

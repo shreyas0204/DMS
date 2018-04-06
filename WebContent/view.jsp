@@ -45,7 +45,8 @@
 
 <body>
 	<%
-		ResultSet rs = (ResultSet) request.getAttribute("viewpartner");
+		ResultSet rs = (ResultSet) request.getAttribute("viewpartner1");
+	
 	%>
 	<div class="ch-container">
 		<div class="row">
@@ -91,7 +92,7 @@
 
 										<tr>
 
-											<td>Partner Name</td>
+											<td> Name</td>
 											<td><div id="the-basics" class="has-success">
 													<%=rs.getString("name")%>
 												</div></td>
@@ -110,7 +111,7 @@
 
 											<td>Email address</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("type")%>
+													<%=rs.getString("bug_type")%>
 												</div></td>
 
 										</tr>
