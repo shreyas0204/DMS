@@ -152,7 +152,7 @@
 											</a> <a class="btn btn-info" href="#"
 												onClick="window.open('edit?pid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getString("name")%>','<%=rs.getString("name")%>')">
+											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getString("name")%>','<%=rs.getString("id")%>')">
 													<i class="glyphicon glyphicon-trash icon-white"></i> Delete
 											</a></td>
 										</tr>

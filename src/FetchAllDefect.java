@@ -17,16 +17,16 @@ import com.dexpert.main.databaseconnection.DBConnection;
 
 
 /**
- * Servlet implementation class FetchPartner
+ * Servlet implementation class FetchAllDefect
  */
-@WebServlet("/FetchPartner")
-public class FetchPartner extends HttpServlet {
+@WebServlet("/FetchAllDefect")
+public class FetchAllDefect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FetchPartner() {
+    public FetchAllDefect() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +52,7 @@ public class FetchPartner extends HttpServlet {
 	     	   request.setAttribute("defectList", rs);   	  
 	     	
 	     	   
-	     	   rd=request.getRequestDispatcher("/partnersList.jsp");
+	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
 	     	   rd.forward(request, response);
 	     	   
 	        }   
@@ -60,7 +60,7 @@ public class FetchPartner extends HttpServlet {
 	     	   
 	     	   request.setAttribute("partnersList", rs);
 	     	   
-	     	   rd=request.getRequestDispatcher("/partnersList.jsp");
+	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
 	     	   rd.forward(request, response);  	   
 	        }
 	     	

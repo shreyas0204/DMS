@@ -18,16 +18,16 @@ import com.dexpert.main.databaseconnection.DBConnection;
 
 
 /**
- * Servlet implementation class FetchClient
+ * Servlet implementation class FetchTesterDefect
  */
-@WebServlet("/FetchClient")
-public class FetchClient extends HttpServlet {
+@WebServlet("/FetchTesterDefect")
+public class FetchTesterDefect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FetchClient() {
+    public FetchTesterDefect() {
         super();
         // TODO Auto-generated constructor stub
     }

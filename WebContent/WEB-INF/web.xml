@@ -46,7 +46,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>ke</servlet-name>
-    <servlet-class>FetchPartner</servlet-class>
+    <servlet-class>FetchAllDefect</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ke</servlet-name>
