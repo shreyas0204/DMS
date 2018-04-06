@@ -63,6 +63,7 @@
 <body>
 
 	<%
+
 		ResultSet rs = (ResultSet) request.getAttribute("testerlist");
 		rs.beforeFirst();
 	%>

@@ -37,16 +37,16 @@ public class DeletePartners extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String partner_id = request.getParameter("id");
-		System.out.println("Partner Id is " + partner_id);
+		String defect_id = request.getParameter("id");
+		System.out.println("Partner Id is " + defect_id);
 
 		try {
 			Connection con = connection.getConnection();
 			Statement stmt = con.createStatement();
-			String sqldel = "Delete FROM tendrilla.partners_master Where partnerId=" + partner_id.trim();
+			String sqldel = "Delete FROM dms.defect_info Where id=" + defect_id;
 			stmt.executeUpdate(sqldel);
 
-			String msg =" Partner " + partner_id + " has been deleted.";
+			String msg =" Partner " + defect_id + " has been deleted.";
 			System.out.println(msg);
 			RequestDispatcher rd = null;
 			request.setAttribute("msg", msg);

@@ -17,6 +17,7 @@ import com.dexpert.main.databaseconnection.DBConnection;
 
 
 /**
+
  * Servlet implementation class FetchPartner
  */
 @WebServlet("/FetchPartner")
@@ -59,6 +60,7 @@ public class FetchAllDefect extends HttpServlet {
 	        else{
 	     	   
 	     	   request.setAttribute("buglist", rs);
+
 	     	   
 	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
 	     	   rd.forward(request, response);  	   

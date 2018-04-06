@@ -18,6 +18,7 @@ import com.dexpert.main.databaseconnection.DBConnection;
 
 
 /**
+
  * Servlet implementation class FetchClient
  */
 @WebServlet("/FetchClient")
@@ -71,6 +72,7 @@ public class FetchTesterDefect extends HttpServlet {
 	     	   request.setAttribute("testerlist", rs);
 	     	   
 	     	   rd=request.getRequestDispatcher("/testerlist.jsp");
+
 	     	   rd.forward(request, response);  	   
 	        }
 	     	
