@@ -17,9 +17,10 @@ import com.dexpert.main.databaseconnection.DBConnection;
 
 
 /**
- * Servlet implementation class FetchAllDefect
+
+ * Servlet implementation class FetchPartner
  */
-@WebServlet("/FetchAllDefect")
+@WebServlet("/FetchPartner")
 public class FetchAllDefect extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -58,7 +59,8 @@ public class FetchAllDefect extends HttpServlet {
 	        }   
 	        else{
 	     	   
-	     	   request.setAttribute("partnersList", rs);
+	     	   request.setAttribute("buglist", rs);
+
 	     	   
 	     	   rd=request.getRequestDispatcher("/defectlist.jsp");
 	     	   rd.forward(request, response);  	   

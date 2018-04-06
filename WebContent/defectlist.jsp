@@ -56,7 +56,7 @@
 	<!-- topbar starts -->
 	<div class="navbar navbar-default" role="navigation">
 
-		<jsp:include page="header-sa.jsp"></jsp:include>
+		<jsp:include page="admin-header.jsp"></jsp:include>
 	</div>
 	<!-- topbar ends -->
 
@@ -67,7 +67,7 @@
 			<div class="col-sm-2 col-lg-2">
 				<div class="sidebar-nav">
 					<div class="nav-canvas">
-						<jsp:include page="menu-sa.jsp"></jsp:include>
+						<jsp:include page="admin-menu.jsp"></jsp:include>
 					</div>
 				</div>
 			</div>
@@ -106,32 +106,26 @@
 							</div>
 							<div class="box-content">
 							
-						              	<%
-											String msg = (String) request.getAttribute("msg");
-											if (msg != null) {
-										%>
-										<center><h2><font color="RED"><%=msg%></font></h2></center>
-										<%
-											} else {}
-										%>
+						              	
 							
 								<!-- 	<div class="alert alert-info"> -->
 								<div align="right">
 									<!-- <a class="btn btn-info" href='window.open("clientform.html",target="_blank")'> -->
 									<button class="btn btn-success"
 										onClick="window.open('partnerform.jsp', '_blank', 'height=500,width=500')"
-										style="width: inherit;">Add Partner</button>
+										style="width: inherit;">Add Bug</button>
 								</div>
 								<!-- </div> -->
 								<table
 									class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Address</th>
-											<th>Contact Number</th>
-											<th>Email</th>
-											<th>Actions</th>
+											<th>ID</th>
+											<th>Bug</th>
+											<th>Type</th>
+											<th>Severity</th>
+											<th>Status</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -140,20 +134,18 @@
 										%>
 
 										<tr>
-											<td><%=rs.getString("name")%></td>
-											<td class="center">2012/01/01</td>
-											<td class="center">Member</td>
-											<td class="center">Member</td>
-											<!-- <td class="center"><span
-												class="label-success label label-default">Active</span></td> -->
+											<td><%=rs.getInt("id")%></td>
+											<td class="center"><%=rs.getString("name")%></td>
+											<td class="center"><%=rs.getString("bug_type")%></td>
+											<td class="center"><%=rs.getString("severity")%></td>
+											<td class="center"><%=rs.getString("status")%></td>
 											<td class="center"><a class="btn btn-success" href="#"
-												onClick="window.open('view?pid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
+												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"
-												onClick="window.open('edit?pid=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
-													<i class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getString("name")%>','<%=rs.getString("id")%>')">
-													<i class="glyphicon glyphicon-trash icon-white"></i> Delete
+											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+													class="glyphicon glyphicon-edit icon-white"></i> Edit
+											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
+													class="glyphicon glyphicon-trash icon-white"></i> Delete
 											</a></td>
 										</tr>
 

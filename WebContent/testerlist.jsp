@@ -63,11 +63,13 @@
 <body>
 
 	<%
-		ResultSet rs = (ResultSet) request.getAttribute("AllclientList");
+
+		ResultSet rs = (ResultSet) request.getAttribute("testerlist");
+		rs.beforeFirst();
 	%>
 	<div class="navbar navbar-default" role="navigation">
 
-		<jsp:include page="header-partner.jsp"></jsp:include>
+		<jsp:include page="tester-header.jsp"></jsp:include>
 	</div>
 	<!-- topbar ends -->
 
@@ -78,7 +80,7 @@
 			<div class="col-sm-2 col-lg-2">
 				<div class="sidebar-nav">
 					<div class="nav-canvas">
-						<jsp:include page="menu-partner.jsp"></jsp:include>
+						<jsp:include page="tester-menu.jsp"></jsp:include>
 					</div>
 				</div>
 			</div>
@@ -128,11 +130,12 @@
 									class="table table-striped table-bordered bootstrap-datatable datatable responsive">
 									<thead>
 										<tr>
-											<th>Name</th>
-											<th>Address</th>
-											<th>Role</th>
+											<th>ID</th>
+											<th>Bug</th>
+											<th>Type</th>
+											<th>Severity</th>
 											<th>Status</th>
-											<th>Actions</th>
+											<th></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -141,17 +144,17 @@
 										%>
 
 										<tr>
-											<td><%=rs.getString("organization_name")%></td>
-											<td class="center">2012/01/01</td>
-											<td class="center">Member</td>
-											<td class="center"><span
-												class="label-success label label-default">Active</span></td>
+											<td><%=rs.getInt("id")%></td>
+											<td class="center"><%=rs.getString("name")%></td>
+											<td class="center"><%=rs.getString("bug_type")%></td>
+											<td class="center"><%=rs.getString("severity")%></td>
+											<td class="center"><%=rs.getString("status")%></td>
 											<td class="center"><a class="btn btn-success" href="#"
-												onClick="window.open('viewclient?orgid=<%=rs.getString("organizationId")%>', '_blank', 'height=500,width=500')">
+												onClick="window.open('viewclient?orgid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getString("organizationId")%>', '_blank', 'height=500,width=500')"> <i
+											</a> <a class="btn btn-info" href="#"'editc?oid=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
 													class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getString("organization_name")%>','<%=rs.getString("organizationId")%>')"> <i
+											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
 													class="glyphicon glyphicon-trash icon-white"></i> Delete
 											</a></td>
 										</tr>
@@ -234,7 +237,7 @@
 
 <script type="text/javascript">
 
-function deletes(name,id){
+function deletes(id){
 	
 	var cnf = confirm("Delete " + name + " ? ")
 	if (cnf) {
