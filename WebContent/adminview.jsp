@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="utf-8">
-<title>View Partner</title>
+<title>View Bug Details</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- The styles -->
 <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
@@ -85,7 +85,7 @@
 								<!-- put your content here -->
 								<%
 									if (rs.next())
-										rs.beforeFirst();
+										
 								%>
 								<table id="mainForm1">
 									<tbody>
@@ -111,7 +111,7 @@
 
 											<td>Bug Type</td>
 											<td><div id="the-basics" class="has-success">
-													<%=rs.getString("type")%>
+													<%=rs.getString("bug_type")%>
 												</div></td>
 
 										</tr>

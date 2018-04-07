@@ -41,14 +41,14 @@
     <url-pattern>/tester_bug</url-pattern>
   </servlet-mapping>
   
-  <!-- <servlet>
+  <servlet>
     <servlet-name>pat</servlet-name>
-    <servlet-class>addpartner</servlet-class>
+    <servlet-class>NewBugByAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>pat</servlet-name>
-    <url-pattern>/addllpartnerform</url-pattern>
-  </servlet-mapping> -->
+    <url-pattern>/newbugbyadmin</url-pattern>
+  </servlet-mapping>
   
   <servlet>
     <servlet-name>ke</servlet-name>
@@ -68,42 +68,42 @@
     <url-pattern>/saLogout</url-pattern>
   </servlet-mapping>
   
-  <servlet>
+ <servlet>
     <servlet-name>editbutton</servlet-name>
     <servlet-class>AdminEdit</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>editbutton</servlet-name>
-    <url-pattern>/edit?</url-pattern>
+    <url-pattern>/adminedit</url-pattern>
   </servlet-mapping>
   
-  <!-- <servlet>
+   <servlet>
     <servlet-name>update</servlet-name>
     <servlet-class>EditBugByAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>update</servlet-name>
-    <url-pattern>/editbugbyadmin</url-pattern>
-  </servlet-mapping> -->
+    <url-pattern>/updatePartner</url-pattern>
+  </servlet-mapping>
   
-  <servlet>
+ <servlet>
     <servlet-name>viewbutton</servlet-name>
     <servlet-class>AdminView</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>viewbutton</servlet-name>
-    <url-pattern>/viewbug?</url-pattern>
+    <url-pattern>/viewbug</url-pattern>
   </servlet-mapping>
   
- <!--  <servlet>
+   <servlet>
     <servlet-name>deletePart</servlet-name>
-    <servlet-class>DeletePartners</servlet-class>
+    <servlet-class>DeleteBug</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>deletePart</servlet-name>
-    <url-pattern>/deletePartner</url-pattern>
+    <url-pattern>/deletebug</url-pattern>
   </servlet-mapping>
-   -->
+   
   <!-- <servlet>
     <servlet-name>deleteClient</servlet-name>
     <servlet-class>DeleteClient</servlet-class>

@@ -52,6 +52,7 @@
 	<%
 		ResultSet rs = (ResultSet) request.getAttribute("adminlist");
 		rs.beforeFirst();
+		Integer id =(Integer) session.getAttribute("sessionID");
 	%>
 	<!-- topbar starts -->
 	<div class="navbar navbar-default" role="navigation">
@@ -112,8 +113,9 @@
 								<div align="right">
 									<!-- <a class="btn btn-info" href='window.open("clientform.html",target="_blank")'> -->
 									<button class="btn btn-success"
-										onClick="window.open('partnerform.jsp', '_blank', 'height=500,width=500')"
+										onClick="window.open('addbugbyadmin.jsp?id=<%=id%>', '_blank', 'height=500,width=500')"
 										style="width: inherit;">Add Bug</button>
+										
 								</div>
 								<!-- </div> -->
 								<table
@@ -141,11 +143,11 @@
 											<td class="center"><%=rs.getString("status")%></td>
 											<td class="center"><a class="btn btn-success" id="view" href="#" onClick="window.open('viewbug?id=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')">
 													<i class="glyphicon glyphicon-zoom-in icon-white"></i> View
-											</a>  <a class="btn btn-info" href="#" onClick="window.open('edit?id=<%=rs.getInt("id")%>', '_blank', 'height=500,width=500')"> <i
+											</a><a class="btn btn-info" href="#" onClick="window.open('adminedit?id=<%=rs.getString("id")%>', '_blank', 'height=500,width=500')"> <i
 													class="glyphicon glyphicon-edit icon-white"></i> Edit
-											</a> <%-- <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
+											</a> <a class="btn btn-danger" href="#" onclick="deletes('<%=rs.getInt("id")%>')"> <i
 													class="glyphicon glyphicon-trash icon-white"></i> Delete
-											</a> --%></td>
+											</a></td>
 										</tr>
 
 										<%
@@ -225,12 +227,12 @@
 	<script type="text/javascript">
 	
 	
-	function deletes(name,id){
+	function deletes(id){
 	
-		var cnf = confirm("Delete " + name + " ? ")
+		var cnf = confirm("Delete " + id + " ? ")
 		if (cnf) {
-			alert("Partner has been Deleted");
-			window.location="deletePartner?id=" + id;
+			alert("Bugr has been Deleted");
+			window.location="deletebug?id=" + id;
 			
 		}
 	}

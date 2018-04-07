@@ -1,3 +1,4 @@
+<%@ page import="java.sql.*"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +45,9 @@
 </head>
 
 <body>
+<%
+		String id = request.getParameter("id");
+	%>
 
 	<div class="ch-container">
 		<div class="row">
@@ -82,25 +86,27 @@
 							</div>
 							<div class="box-content">
 								<!-- put your content here -->
-								<form role="form" action="addllpartnerform" method="get">
+								<form role="form" action="newbugbyadmin" method="get">
 
 									<table id="mainForm1">
 										<tbody>
+										<input type="hidden" class="form-control" id="id"
+												name="id" value="<%=id %>">
 
 											<tr>
 
-												<td>Partner Name</td>
+												<td>Bug Name</td>
 												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
-															name="partnerName" placeholder="First Name">
+														<input type="text" class="form-control" id="name"
+															name="name" placeholder="Bug Name">
 													</div></td>
 											</tr>
 											<tr>
 
-												<td>Occupation</td>
+												<td>Bug Type</td>
 												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
-															name="Occupation" placeholder="Last Name">
+														<input type="text" class="form-control" id="type"
+															name="type">
 													</div></td>
 
 
@@ -108,52 +114,34 @@
 											</tr>
 											<tr>
 
-												<td>Email address</td>
-												<td><div id="the-basics" class="has-success">
-														<input name="email_address" type="email"
-															class="form-control" id="exampleInputEmail1"
-															placeholder="Enter email">
-													</div></td>
-
-											</tr>
-											<tr>
-
-												<td>Contact No</td>
-												<td><div id="the-basics" class="has-success">
-														<input type="number" name="contactNumber"
-															class="form-control" maxlength="10" id=""
-															placeholder="Contact no.">
-													</div></td>
-											</tr>
-
-											<tr>
-
-												<td>Address</td>
-												<td><div id="the-basics" class="has-success">
-
-
-														<input type="text" required="required" id="payer_type"
-															name="address" pattern="[a-zA-Z][a-zA-Z0-9\s]*"
-															title="Address Should be Alphanumeric"
-															placeholder="Enter text here..." class="form-control">
+												<td>Severity</td>
+												<td><div id="the-basics">
+														<input name="severity" type="text"
+															class="form-control" id="severity"
+															>
 													</div></td>
 
 											</tr>
 											<tr>
 
-												<td>Partner type</td>
-												<td><div id="the-basics" class="has-success">
+												<td>Status</td>
+												<td><div id="status">
+														<input type="text" name="status"
+															class="form-control" maxlength="10" id="status">
+													</div></td>
+											</tr>
+
+											<tr>
+
+												<td>Description</td>
+												<td><div id="description" class="has-success">
 
 
-														<input type="text" name="partNerType" class="form-control"
-															id="" placeholder="relationship type">
+														<input type="text" id="description"
+															name="description" class="form-control">
 													</div></td>
 
 											</tr>
-
-
-
-
 											<tr>
 												<td><input class="btn btn-sm btn-success" type="submit"
 													value="Save"></td>

@@ -18,7 +18,7 @@ import com.dexpert.main.databaseconnection.DBConnection;
 /**
  * Servlet implementation class view
  */
-@WebServlet("/viewbug")
+@WebServlet("/AdminView")
 public class AdminView extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -18,7 +18,7 @@ import com.dexpert.main.databaseconnection.DBConnection;
 /**
  * Servlet implementation class updatepartner
  */
-@WebServlet("/editbugbyadmin")
+@WebServlet("/EditBugByAdmin")
 public class EditBugByAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -43,43 +43,36 @@ public class EditBugByAdmin extends HttpServlet {
 		// ").append(request.getContextPath());
 		try {
 
-			ResultSet rs1 = (ResultSet) request.getAttribute("resultSet");
+			ResultSet rs1 = (ResultSet) request.getAttribute("id");
 			Random rand = new Random();
 			int pick = rand.nextInt(900) + 100;
 
-			// rs1.getInt("pid");
-			String pid = request.getParameter("partnerId");
-			String partNerType = request.getParameter("partNerType");
-			String address = request.getParameter("address");
-			String contactNumber = request.getParameter("contactNumber");
-			String gender = request.getParameter("gender");
-			String occupation = request.getParameter("occupation");
-			String email = request.getParameter("email");
-			String partnerName = request.getParameter("partnerName");
+			String id = request.getParameter("id");
+			String name = request.getParameter("name");
+			String bug_type = request.getParameter("bug_type");
+			String severity = request.getParameter("severity");
+			String status = request.getParameter("status");
+			String description = request.getParameter("description");
 
 			Connection con = connection.getConnection();
 			Statement stmt = con.createStatement();
-			String sql = "UPDATE tendrilla.partners_master SET address = '" + address + "',contactNumber = '"
-					+ contactNumber + "',email ='" + email + "',gender = '" + gender + "',occupation = '" + occupation
-					+ "',partnerName = '" + partnerName + "' WHERE partnerId = " + pid;
+			String sql = "UPDATE dms.defect_info SET name = '" + name + "',bug_type = '" + bug_type + "',severity ='"
+					+ severity + "',status = '" + status + "',description = '" + description + "' WHERE id = " + id;
 
 			int i = stmt.executeUpdate(sql);
 
 			RequestDispatcher db = null;
 
-			 System.out.println(i);
-				RequestDispatcher rd = null;
+			System.out.println(i);
+			RequestDispatcher rd = null;
 
-				// stmt.executeUpdate();
-				if (i!= 0){
-					System.out.println("successfully done");
-				request.setAttribute("msg", "Record Updated for "+partnerName);
+			// stmt.executeUpdate();
+			if (i != 0) {
+
 				rd = request.getRequestDispatcher("/success.jsp");
 				rd.forward(request, response);
-				}else
-					System.out.println("unsuccessful");
-
-			
+			} else
+				;
 
 		}
 

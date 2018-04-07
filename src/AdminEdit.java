@@ -20,7 +20,7 @@ import com.tendrilla.mail.MailSender;
 /**
  * Servlet implementation class edit
  */
-@WebServlet("/edit")
+@WebServlet("/AdminEdit")
 public class AdminEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -43,7 +43,6 @@ public class AdminEdit extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at:
 		// ").append(request.getContextPath());
-		System.out.println("inside doget");
 
 		try {
 			/*
@@ -61,16 +60,13 @@ public class AdminEdit extends HttpServlet {
 			stmt = con.createStatement();
 
 			int id = Integer.parseInt(request.getParameter("id"));
-			System.out.println("print partner id=" + id);
 
 			Statement statement = (Statement) con.createStatement();
 			String sql = "select * from dms.defect_info where id="+id+"";
 			ResultSet rs1 = statement.executeQuery(sql);
 			RequestDispatcher rd = null;
 			
-			    System.out.println("I am Inside Loop");
 				request.setAttribute("adminedit", rs1);
-				System.out.println("afetr request");
 				rd = request.getRequestDispatcher("/adminedit.jsp");
 				rd.forward(request, response); 			
 

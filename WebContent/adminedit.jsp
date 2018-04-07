@@ -93,12 +93,12 @@
 									<table id="mainForm1">
 										<tbody>
 											<input type="hidden" class="form-control" id=""
-												name="partnerId" value="<%=rs1.getInt("id")%>">
+												name="id" value="<%=rs1.getInt("id")%>">
 											<tr>
 
 												<td>Bug Name</td>
 												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
+														<input type="text" class="form-control" id="name"
 															name="name"
 															value="<%=rs1.getString("name")%>">
 													</div></td>
@@ -107,7 +107,7 @@
 
 												<td>Bug Type</td>
 												<td><div id="the-basics" class="has-success">
-														<input type="text" class="form-control" id=""
+														<input type="text" class="form-control" id="type"
 															value="<%=rs1.getString("bug_type")%>"
 															name="type" />
 													</div></td>
@@ -120,7 +120,7 @@
 												<td>Severity</td>
 												<td><div id="the-basics" class="has-success">
 														<input type="text" class="form-control"
-															id="exampleInputEmail1"
+															id="severity"
 															value="<%=rs1.getString("severity")%>" name="severity" />
 													</div></td>
 
@@ -130,7 +130,7 @@
 												<td>Status</td>
 												<td><div id="the-basics" class="has-success">
 														<input type="test" class="form-control" maxlength="10"
-															id="" value="<%=rs1.getString("status")%>"
+															id="status" value="<%=rs1.getString("status")%>"
 															name="status" />
 													</div></td>
 											</tr>
@@ -141,7 +141,7 @@
 												<td><div id="the-basics" class="has-success">
 
 
-														<input type="text" id="payer_type"
+														<input type="text" id="description"
 															name="description"
 															value="<%=rs1.getString("description")%>"
 															class="form-control">
@@ -149,7 +149,7 @@
 
 											</tr>
 											<tr>
-												<td><a href="editbugbyadmin"></a><input
+												<td><a href=""></a><input
 													class="btn btn-sm btn-success" type="submit" value="Update"></a></td>
 												<td><button class="btn btn-sm btn-warning"
 														onclick="window.close()">Cancel</button></td>

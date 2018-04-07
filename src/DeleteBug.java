@@ -17,7 +17,7 @@ import com.dexpert.main.databaseconnection.DBConnection;
  * Servlet implementation class DeletePartners
  */
 @WebServlet("/DeletePartners")
-public class DeletePartners extends HttpServlet {
+public class DeleteBug extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	DBConnection connection = new DBConnection();
@@ -25,7 +25,7 @@ public class DeletePartners extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DeletePartners() {
+	public DeleteBug() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

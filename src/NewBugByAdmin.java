@@ -1,5 +1,8 @@
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.io.IOException;
 import java.util.Random;
 
@@ -20,14 +23,14 @@ import com.tendrilla.mail.MailSender;
 /**
  * Servlet implementation class addpartner
  */
-@WebServlet("/addpartner")
-public class addpartner extends HttpServlet {
+@WebServlet("/NewBugByAdmin")
+public class NewBugByAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public addpartner() {
+	public NewBugByAdmin() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -52,56 +55,31 @@ public class addpartner extends HttpServlet {
 			Statement stmt = con.createStatement();
 			RequestDispatcher db = null;
 			HttpSession session = request.getSession();
-			// String partnerID = (String) session.getAttribute("PARTNERID");
-			String partNerType = request.getParameter("partNerType");
-			String address = request.getParameter("address");
-			// String reffer_Partner_Idfk
-			// =request.getParameter("reffer_Partner_Idfk");
-			// System.out.println("partner id from session converted to int
-			// is::"+Integer.parseInt(partnerID));
-			String contactNumber = request.getParameter("contactNumber");
-			String gender = request.getParameter("gender");
-			String occupation = request.getParameter("occupation");
-			String email = request.getParameter("email_address");
-			String registeredDate = request.getParameter("registeredDate");
-			String partnerName = request.getParameter("partnerName");
+			String id = request.getParameter("id");
+			String name = request.getParameter("name");
+			String bug_type = request.getParameter("type");
+			String severity = request.getParameter("severity");
+			String status = request.getParameter("status");
+			String description = request.getParameter("description");
+			LocalDateTime date = LocalDateTime.now();
+			System.out.println(id);
+			System.out.println(name);
+			System.out.println(bug_type);
+			System.out.println(date);
+			
 			Random rand = new Random();
 			int pick = rand.nextInt(900) + 100;
 			stmt = con.createStatement();
 			
 
-			String sql = "insert into tendrilla.partners_master(partnerId, address, contactNumber, email, gender, occupation,"
-					+ " parentPartNerId,partNerType, partnerName, registeredDate, loginBean_loginId)" + "Values(null,'"
-					+ address + "','" + contactNumber + "','" + email + "','" + gender + "','" + occupation + "'," + "'"
-					+ pick + "','" + partNerType + "','" + partnerName + "',current_timestamp(),null)";
+			String sql = "insert into dms.defect_info(name,bug_type,severity, status,description,tester_id,date) Values('"	+ name + "','" + bug_type + "','" + severity + "','" + status + "','" + description + "','"+ id + "','" + date + "')";
 
 			stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
 			ResultSet rs = stmt.getGeneratedKeys();
 			rs.next();
-			int id = rs.getInt(1);
+			int ids = rs.getInt(1);
 			System.out.println("Print id is =" + id);
-			String username = partnerName.toUpperCase().substring(0, 4).trim() + "_" + id;
-			passwardgenerator pg = new passwardgenerator();
-			String passward = String.valueOf(pg.generatePswd(10));
-			// System.out.println("Print id is ="+username);
-			// System.out.println("Print id is ="+pg);
-
-			String sql2 = "insert into tendrilla.login_master(loginId,password,userName,partner_Id_Fk,user_id_fk,org_type)"
-					+ "" + "values('"+pick+"','" + pg + "','" + username + "',"+id+",null,'client')";
 			
-			stmt.executeUpdate(sql2);
-			MailSender mail = new MailSender();
-			if (!email.isEmpty() || email != null || !email.equals("")) {
-				mail.send(email, username, passward, partnerName);
-			}
-
-			/*
-			 * int i=sql.executeUpdate(); if(i==0) {
-			 * db=request.getRequestDispatcher("/successful_login.jsp");
-			 * db.forward(request, response); } else {
-			 * db=request.getRequestDispatcher("/successful_login.jsp");
-			 * db.forward(request, response); }
-			 */
 
 		}
 

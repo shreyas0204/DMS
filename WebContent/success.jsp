@@ -29,19 +29,11 @@
 
 </head>
 <body>
-	<%
-											String msg = (String) request.getAttribute("msg");
-											if (msg != null) {
-										%>
+	
 	<center>
-		<h2>
-			<font color="green"><%=msg%></font>
-		</h2>
+		<h1>UPDATE DONE SUCCESSFULLY</h1>
 	</center>
-	<%
-											} else {}
-										%>
-
+	
 	<center>
 		<button class="btn btn-sm btn-warning" onclick="window.close()">Close</button>
 	</center>
