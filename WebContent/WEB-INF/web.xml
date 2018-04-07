@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-  <servlet>
+   <servlet>
     <servlet-name>register</servlet-name>
     <servlet-class>Registration</servlet-class>
   </servlet>
@@ -8,10 +8,12 @@
     <servlet-name>register</servlet-name>
     <url-pattern>/user_registration</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>de</servlet-name>
     <servlet-class>LoginVerify</servlet-class>
@@ -20,14 +22,16 @@
     <servlet-name>de</servlet-name>
     <url-pattern>/loginpage</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+  <!-- <servlet>
     <servlet-name>cclient</servlet-name>
     <servlet-class>addclient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>cclient</servlet-name>
     <url-pattern>/client</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
+  
   <servlet>
     <servlet-name>ppclient</servlet-name>
     <servlet-class>FetchTesterDefect</servlet-class>
@@ -36,14 +40,16 @@
     <servlet-name>ppclient</servlet-name>
     <url-pattern>/tester_bug</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+  <!-- <servlet>
     <servlet-name>pat</servlet-name>
     <servlet-class>addpartner</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>pat</servlet-name>
     <url-pattern>/addllpartnerform</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
+  
   <servlet>
     <servlet-name>ke</servlet-name>
     <servlet-class>FetchAllDefect</servlet-class>
@@ -52,6 +58,7 @@
     <servlet-name>ke</servlet-name>
     <url-pattern>/fetchpartners</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>Logout</servlet-name>
     <servlet-class>LogOut</servlet-class>
@@ -60,6 +67,7 @@
     <servlet-name>Logout</servlet-name>
     <url-pattern>/saLogout</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>editbutton</servlet-name>
     <servlet-class>AdminEdit</servlet-class>
@@ -68,14 +76,16 @@
     <servlet-name>editbutton</servlet-name>
     <url-pattern>/edit?</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+  <!-- <servlet>
     <servlet-name>update</servlet-name>
     <servlet-class>EditBugByAdmin</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>update</servlet-name>
     <url-pattern>/editbugbyadmin</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
+  
   <servlet>
     <servlet-name>viewbutton</servlet-name>
     <servlet-class>AdminView</servlet-class>
@@ -84,7 +94,8 @@
     <servlet-name>viewbutton</servlet-name>
     <url-pattern>/viewbug?</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+ <!--  <servlet>
     <servlet-name>deletePart</servlet-name>
     <servlet-class>DeletePartners</servlet-class>
   </servlet>
@@ -92,30 +103,34 @@
     <servlet-name>deletePart</servlet-name>
     <url-pattern>/deletePartner</url-pattern>
   </servlet-mapping>
-  <servlet>
+   -->
+  <!-- <servlet>
     <servlet-name>deleteClient</servlet-name>
     <servlet-class>DeleteClient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>deleteClient</servlet-name>
     <url-pattern>/deleteClients</url-pattern>
-  </servlet-mapping>
-  <servlet>
+  </servlet-mapping> -->
+  
+  <!-- <servlet>
     <servlet-name>editcbutton</servlet-name>
     <servlet-class>editclient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>editcbutton</servlet-name>
     <url-pattern>/editc?</url-pattern>
-  </servlet-mapping>
-  <servlet>
+  </servlet-mapping> -->
+  
+  <!-- <servlet>
     <servlet-name>updatec</servlet-name>
     <servlet-class>updateclient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>updatec</servlet-name>
     <url-pattern>/updateClient</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
+  
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
     
